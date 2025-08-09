@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Contatos</title>
+</head>
+<body>
+    <h1>Contatos</h1>
+    <a href="/contatos/novo">Novo Contato</a>
+    <ul>
+        {#for c in contatos}
+        <li>
+            {c.nome} - {#for t in c.telefones}{t.tipo}: {t.numero}{/for}
+            <a href="/contatos/delete/{c.id}">Excluir</a>
+        </li>
+        {/for}
+    </ul>
+</body>
+</html>
